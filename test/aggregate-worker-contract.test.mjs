@@ -8,12 +8,12 @@ test("blueprint pins the three independently published Card releases", async () 
   const manifest = JSON.parse(await readFile(new URL("card.json", sourceRoot), "utf8"));
 
   assert.equal(manifest.name, "@darwinian/darwinian-cards-worker");
-  assert.equal(manifest.version, "2.0.0");
+  assert.equal(manifest.version, "3.0.0");
   assert.equal(manifest.kind, "blueprint");
   assert.deepEqual(manifest.composedFrom, [
-    "@remyjkim/fal@0.2.2",
-    "@darwinian/operator@2.0.0",
-    "@darwinian/notion@1.0.0",
+    "git+https://github.com/remyjkim/fal.git#v0.2.2",
+    "git+https://github.com/curation-labs/darwinian-operator.git#v2.0.0",
+    "git+https://github.com/curation-labs/darwinian-notion.git#v1.0.0",
   ]);
 });
 
